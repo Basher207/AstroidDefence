@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+using Game.Resource;
+
 public class GunFire : MonoBehaviour {
 
 	public static GameObject laserBullet;
@@ -12,6 +15,8 @@ public class GunFire : MonoBehaviour {
 	public bool fire;
 	public float fireSpeed;
 	public float offset;
+
+	public float energyPerShot = 4;
 
 	public float coolDown = 0.2f;
 
@@ -33,16 +38,17 @@ public class GunFire : MonoBehaviour {
 	void FixedUpdate () {
 		sphereColl.radius = Mathf.MoveTowards (sphereColl.radius, maxRadius, rangeIncreasePerSecond * Time.deltaTime);
 		if (fire && targetRigidBodies.Count != 0) {
-			fire = false;
-			while (targetRigidBodies.Count != 0 && targetRigidBodies[0] == null)
+			if (GameResources.UseEnergy (energyPerShot)) {
+				fire = false;
+				while (targetRigidBodies.Count != 0 && targetRigidBodies[0] == null)
+					targetRigidBodies.RemoveAt (0);
+				gun.RotateTo (Quaternion.FromToRotation (Vector3.forward, Math.VectorToIntercept (targetRigidBodies[0], transform.position, fireSpeed)));
 				targetRigidBodies.RemoveAt (0);
-
-			gun.RotateTo (Quaternion.FromToRotation (Vector3.forward, Math.VectorToIntercept (targetRigidBodies[0], transform.position, fireSpeed)));
-			targetRigidBodies.RemoveAt (0);
-			GameObject bullet = Instantiate (laserBullet, transform.position + transform.forward * offset, transform.rotation) as GameObject;
-			GameMang.bulletsShot();
-			Destroy (bullet, 6f);
-			bullet.GetComponent<Rigidbody> ().velocity = transform.forward * fireSpeed;
+				GameObject bullet = Instantiate (laserBullet, transform.position + transform.forward * offset, transform.rotation) as GameObject;
+				GameMang.bulletsShot();
+				Destroy (bullet, 6f);
+				bullet.GetComponent<Rigidbody> ().velocity = transform.forward * fireSpeed;
+			}
 		}
 	}
 	void OnTriggerEnter (Collider coll) {

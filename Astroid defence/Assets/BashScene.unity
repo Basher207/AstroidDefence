@@ -136,6 +136,14 @@ Prefab:
       propertyPath: coolDown
       value: .150000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -469,6 +477,14 @@ Prefab:
       propertyPath: coolDown
       value: .150000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -528,6 +544,14 @@ Prefab:
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: coolDown
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -591,11 +615,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: rangeIncreasePerSecond
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: rangeDecreasePerEnter
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -657,6 +685,14 @@ Prefab:
       propertyPath: coolDown
       value: .150000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -712,6 +748,14 @@ Prefab:
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: coolDown
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d72a79465064c1694191053a57412f, type: 2}
@@ -841,6 +885,14 @@ Prefab:
       propertyPath: coolDown
       value: .150000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -916,6 +968,14 @@ Prefab:
     - target: {fileID: 11472992, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: ToBottom
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1053,6 +1113,14 @@ Prefab:
       propertyPath: coolDown
       value: .150000006
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -1112,6 +1180,14 @@ Prefab:
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: coolDown
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1175,7 +1251,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: rangeIncreasePerSecond
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: rangeDecreasePerEnter
@@ -1196,6 +1272,10 @@ Prefab:
     - target: {fileID: 11472992, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: ToBottom
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1256,6 +1336,14 @@ Prefab:
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: coolDown
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1488,6 +1576,14 @@ Prefab:
       propertyPath: ToBottom
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -1514,6 +1610,7 @@ GameObject:
   - 114: {fileID: 2039093410}
   - 114: {fileID: 2039093413}
   - 114: {fileID: 2039093414}
+  - 114: {fileID: 2039093415}
   m_Layer: 10
   m_Name: PlayersShip
   m_TagString: MainCamera
@@ -1678,6 +1775,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &2039093415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039093404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4e4e0dfc5f348e88307e62c627f8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iron: 0
+  energy: 10000
 --- !u!1001 &2128487311
 Prefab:
   m_ObjectHideFlags: 0
@@ -1728,6 +1838,14 @@ Prefab:
     - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
       propertyPath: coolDown
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: rangeIncreasePerSecond
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436568, guid: 32d72a79465064c1694191053a57412f, type: 2}
+      propertyPath: energyPerShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
