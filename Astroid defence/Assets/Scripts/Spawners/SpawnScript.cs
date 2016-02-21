@@ -13,6 +13,9 @@ public class SpawnScript : MonoBehaviour {
 	public float minAsteroidScale = 2;
 	public float maxAsteroidScale = 1;
 
+	public float minRotation = 1;
+	public float maxRotation = 2;
+
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Vector3 max = transform.position + transform.localScale;
@@ -20,7 +23,9 @@ public class SpawnScript : MonoBehaviour {
 			for (int i = 0; i < numberToSpawn; i++) {
 				Vector3 spawnPosition = new Vector3 (Random.Range(min.x, max.x), Random.Range(min.y, max.y), Random.Range (min.z, max.z));
 				GameObject objectSpawned = Instantiate (toSpawn, spawnPosition, Quaternion.identity) as GameObject;
-				objectSpawned.GetComponent<Rigidbody> ().velocity = velocityDirection.normalized * speed;
+				Rigidbody rigidBody = objectSpawned.GetComponent<Rigidbody> ();
+				rigidBody.velocity = velocityDirection.normalized * speed;
+				rigidBody.angularVelocity = Random.onUnitSphere * Random.Range (minRotation, maxRotation);
 				objectSpawned.transform.localScale *= Random.Range (minAsteroidScale, maxAsteroidScale);
 			}
 		}
