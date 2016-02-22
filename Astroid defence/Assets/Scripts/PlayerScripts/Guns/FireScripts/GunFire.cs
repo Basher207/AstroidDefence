@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using Game.Resource;
+using Game.Guns;
 
 public class GunFire : MonoBehaviour {
 

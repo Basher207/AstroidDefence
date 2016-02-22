@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 public static class Math {
+	#region Math
 	public static Vector3 VectorToIntercept (Rigidbody toIntercept, Vector3 fromPosition, float bulletVelocity) {
 		Vector3 toTarget = toIntercept.position - fromPosition;
 		
@@ -29,4 +31,34 @@ public static class Math {
 	public static float NegativeQuadratic (float a, float b, float c)  {
 		return (-b - Mathf.Sqrt (b * b - 4 * a * c)) / (2 * a);
 	}
+	#endregion
+
+	#region Mesh
+
+	public static void CombineMeshes (GameObject parent, Mesh targetMesh) { 
+		List<Vector3> verts = new List<Vector3> ();
+		List<int> tris 		= new List<int> ();
+
+		MeshFilter [] filters = parent.GetComponentsInChildren <MeshFilter> ();
+
+		for (int i = 0; i < filters.Length; i++) {
+			Vector3 [] thisVerts = filters[i].mesh.vertices;
+			int     [] thisTris  = filters[i].mesh.triangles;
+
+			int trisOffset = verts.Count;
+
+			for (int j = 0; j < thisVerts.Length; j++) {
+				Vector3 pointInWorldSpace = filters[i].transform.TransformPoint (thisVerts[j]);
+				verts.Add (parent.transform.InverseTransformPoint (pointInWorldSpace));
+			}
+			for (int j = 0; j < thisTris.Length; j++) {
+				tris.Add (thisTris[j] + trisOffset);
+			}
+		}
+		targetMesh.triangles = new int[0];
+		targetMesh.vertices  = verts.ToArray ();
+		targetMesh.triangles = tris.ToArray ();
+	}
+
+	#endregion
 }

@@ -1,27 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WeaponStand : MonoBehaviour {
 
-	[HideInInspector] public GunFire gunFire;
+	#region static
+	public const string displayMaterialPath = "Materials/Guns/Visualization";
 
-	void Start () {
-		gunFire = GetComponentInChildren<GunFire> ();
-		SetGunFire (false);
-		SetChildrenActive (false);
+	public static Material visualizationMaterial;
+	
+	public static void Intialize () {
+		if (visualizationMaterial == null) {
+			visualizationMaterial = Resources.Load <Material> (displayMaterialPath);
+		}
 	}
-	public void SetChildrenActive (bool enable) {
-		transform.GetChild(0).gameObject.SetActive (enable);
+	#endregion
+
+	public MeshFilter previewFilter;
+
+	void Awake () {
+		previewFilter = transform.GetChild (0).GetComponent <MeshFilter> ();
+		previewFilter.mesh = new Mesh ();
 	}
-	public void SetGunFire (bool enable) {
-		gunFire.enabled = enable;
-	}
-	public void OnPreview (bool enter) {
-		SetChildrenActive (enter);
+	public void OnPreview (bool on) {
+		Math.CombineMeshes (GunPlacment.weaponToPlace, previewFilter.mesh);
+		Debug.Log (previewFilter.mesh.vertexCount);
 	}
 	public void OnBuy () {
-		SetChildrenActive (true);
-		SetGunFire (true);
-		Destroy (this);
+
 	}
 }
