@@ -9,8 +9,6 @@ public class PlayerControlScript : MonoBehaviour {
 
 	void Awake () {
 		moveScript = GetComponent<MoveScript> ();
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 	}
 	void Update () {
 		if (Input.GetKeyDown (correctRotationKey)) {
