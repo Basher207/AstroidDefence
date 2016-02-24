@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 [ExecuteInEditMode]
-public class TrousGenerator : MonoBehaviour {
+public class TorusGenerator : MonoBehaviour {
 
 	[SerializeField] public bool ClickToUpdateTorus;
 	[SerializeField] public bool gizmos;

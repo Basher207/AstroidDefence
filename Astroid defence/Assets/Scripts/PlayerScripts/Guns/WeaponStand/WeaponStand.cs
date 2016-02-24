@@ -19,12 +19,12 @@ public class WeaponStand : MonoBehaviour {
 	public MeshFilter previewFilter;
 
 	void Awake () {
-		previewFilter = transform.GetChild (0).GetComponent <MeshFilter> ();
-		previewFilter.mesh = new Mesh ();
+		//previewFilter = transform.GetChild (0).GetComponent <MeshFilter> ();
+		//previewFilter.mesh = new Mesh ();
 	}
 	public void OnPreview (bool on) {
-		Math.CombineMeshes (GunPlacment.weaponToPlace, previewFilter.mesh);
-		Debug.Log (previewFilter.mesh.vertexCount);
+		//Math.CombineMeshes (GunPlacment.weaponToPlace, previewFilter.mesh);
+		//Debug.Log (previewFilter.mesh.vertexCount);
 	}
 	public void OnBuy () {
 
