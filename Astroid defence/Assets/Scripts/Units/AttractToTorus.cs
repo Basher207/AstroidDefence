@@ -10,6 +10,7 @@ public class AttractToTorus : MonoBehaviour {
 	[SerializeField] public float distanceToMove;
 	[HideInInspector] public Rigidbody rigidBody;
 
+	Vector3 movementVector;
 	void Awake () {
 		rigidBody = GetComponent<Rigidbody> ();
 	}
@@ -18,7 +19,8 @@ public class AttractToTorus : MonoBehaviour {
 
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, attractionVector, out hit, distanceToMove, shipLayer)) {
-			//TorusNavigator.Tria
+			movementVector = TorusNavigator.TriangleIndexToMovementVector (hit.triangleIndex * 3);
+			rigidBody.AddForce (movementVector.normalized * moveForce);
 		}
 		rigidBody.AddForce (attractionVector.normalized * gravity);
 	}

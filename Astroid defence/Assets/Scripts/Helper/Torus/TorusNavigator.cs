@@ -66,6 +66,7 @@ public class TorusNavigator : MonoBehaviour {
 	#region MonoBehavior
 	public static TorusNavigator instance;
 	public static Vector3 [] verts;
+	public static Vector3 [] normals;
 	public static int	  [] tris;
 	void Awake () {
 		instance = this;
@@ -80,6 +81,7 @@ public class TorusNavigator : MonoBehaviour {
 		vertexHeight = torus.heightVeritcies;
 		verts 		 = meshFilter.mesh.vertices;
 		tris 		 = meshFilter.mesh.triangles;
+		normals 	 = meshFilter.mesh.normals;
 		direction 	 = new Direction[vertexWidth, vertexHeight];
 		UpdateDirectionsFrom (0, 0);
 	}
@@ -91,9 +93,17 @@ public class TorusNavigator : MonoBehaviour {
 		return direction [gridVector.x, gridVector.y];
 	}
 	public static Vector3 TriangleIndexToMovementVector (int index) {
-		Direction direction = TriangleIndexToDirection (index);
-		Vector3 position = TriangleIndexToPosition (index);
-		Vector3 tangent = tangentAtPoint (position);
+		Direction direc				= TriangleIndexToDirection	(index);
+		Vector3 position 			= TriangleIndexToPosition 	(index);
+		Vector3 normal 				= TriangleIndexToNormal 	(index);
+		Vector3 movmentRightVector 	= tangentAtPoint 			(position);
+		movmentRightVector.Normalize ();
+		switch (direc) {
+			case Direction.Down 	: return Quaternion.AngleAxis ( 90,normal) * movmentRightVector; 
+			case Direction.Left		: return Quaternion.AngleAxis (180,normal) * movmentRightVector; 
+			case Direction.Up 		: return Quaternion.AngleAxis (-90,normal) * movmentRightVector; 
+			case Direction.Right 	: return movmentRightVector;
+		}
 		return Vector3.zero;
 	}
 	public static GridVector TriangleIndexToGridVector (int index) {
@@ -154,6 +164,9 @@ public class TorusNavigator : MonoBehaviour {
 
 		Vector3 tangnet = instance.transform.InverseTransformDirection (point).normalized;
 		return tangnet;
+	}
+	public static Vector3 TriangleIndexToNormal (int index) {
+		return normals [index];
 	}
 	#endregion
 	#region Searching
@@ -263,6 +276,14 @@ public class TorusNavigator : MonoBehaviour {
 			uvs[i + 5] = topLeft;
 		}
 		meshFilter.sharedMesh.uv = uvs;
+	}
+	public int index;
+	public void OnDrawGizmos () {
+		if (Application.isPlaying) {
+			Vector3 pos = TriangleIndexToPosition (index);
+			Vector3 tangent = tangentAtPoint (pos);
+			Gizmos.DrawLine (pos, pos + tangent * 15);
+		}
 	}
 	#endregion
 }
