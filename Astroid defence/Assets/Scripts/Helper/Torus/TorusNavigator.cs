@@ -33,11 +33,12 @@ public class TorusNavigator : MonoBehaviour {
 	public struct Searcher {
 		GridVector gridVector;
 		public Searcher (Direction direction, int x, int y) {
-			TorusNavigator.direction [x,y] = OppositeDirection (direction);
+			TorusNavigator.direction [x,y] = direction;
 			gridVector = new GridVector (x,y);
 		}
-		void Update () {
-			TorusNavigator.CheckUp 	(gridVector.x, gridVector.y);
+		public void Update () {
+			TorusNavigator.searchers.Remove (this);
+			TorusNavigator.CheckUp 		(gridVector.x, gridVector.y);
 			TorusNavigator.CheckDown 	(gridVector.x, gridVector.y);
 			TorusNavigator.CheckRight 	(gridVector.x, gridVector.y);
 			TorusNavigator.CheckLeft 	(gridVector.x, gridVector.y);
@@ -78,24 +79,33 @@ public class TorusNavigator : MonoBehaviour {
 		vertexHeight = torus.heightVeritcies;
 		verts 		 = meshFilter.mesh.vertices;
 		direction 	 = new Direction[vertexWidth, vertexHeight];
+
+		UpdateDirectionsFrom (0, 0);
 	}
 	#region Helper functions
 	public static Direction TriangleIndexToDirection (int index) {
-		int widthPos = index / vertexWidth;
+		int widthPos = index / vertexHeight;
 		int heightPos = index % vertexHeight;
 		return direction [widthPos, heightPos];
 	}
 	public static GridVector TriangleIndexToGridVector (int index) {
-		index %= verts.Length;
-		int widthPos = index / (torus.heightVeritcies * 6);
+		index = Mathf.Abs (index % verts.Length);
 		index -= index % 6;
-		int heightPos = (index % (torus.heightVeritcies * 6));
+		int widthPos = index / (torus.heightVeritcies);
+		int heightPos = (index % (torus.heightVeritcies));
+
 		return new GridVector (widthPos, heightPos);
 	}
+	public static Vector3 GridVectorToPosition (GridVector gridVector) {
+		Vector3 firstPos  = verts [gridVector.x * (torus.heightVeritcies * 6) + gridVector.y * 6 + 1];
+		Vector3 secondPos = verts [gridVector.x * (torus.heightVeritcies * 6) + gridVector.y * 6 + 2];
+		Vector3 delta = secondPos - firstPos;
+		
+		return instance.transform.TransformPoint (firstPos + delta / 2);
+		return Vector3.zero;
+	}
 	public static Vector3 TriangleIndexToPosition (int index) {
-		index = index % verts.Length;
-		if (index < 0)
-			index = verts.Length + index;
+		index = Mathf.Abs (index % verts.Length);
 		int widthPos = index / (torus.heightVeritcies * 6);
 		index -= index % 6;
 		int heightPos = (index % (torus.heightVeritcies * 6));
@@ -104,7 +114,7 @@ public class TorusNavigator : MonoBehaviour {
 		Vector3 secondPos = verts [widthPos * (torus.heightVeritcies * 6) + heightPos + 2];
 		Vector3 delta = secondPos - firstPos;
 
-		return instance.transform.TransformPoint (firstPos += delta / 2);
+		return instance.transform.TransformPoint (firstPos + delta / 2);
 	}
 	public static Ray TriangleIndexToRay (int index) {
 		index = index % verts.Length;
@@ -138,40 +148,97 @@ public class TorusNavigator : MonoBehaviour {
 		return tangnet;
 	}
 	#endregion
-	void UpdateDirectionsFrom (int x, int y) {
+	public static void UpdateDirectionsFrom (int x, int y) {
 		ClearDirections ();
-		//if (
+		if (direction [x, y] == Direction.Blocked) {
+			Debug.LogWarning ("Update position Blocked");
+			return;
+		}
+		direction [x,y] = Direction.Target;
+
 		CheckUp 	(x, y);
 		CheckDown 	(x, y);
 		CheckRight 	(x, y);
 		CheckLeft 	(x, y);
+
+		int i = searchers.Count;
+		while (i > 0) {
+			for (i = searchers.Count - 1; i >= 0; i--)
+				searchers[i].Update ();
+		}
+		SetUvsToDirections ();
+	}
+	public static void SetUvsToDirections () {
+		Vector2 [] uvs = new Vector2[verts.Length];
+		for (int i = 0; i < uvs.Length; i+= 6) {
+			GridVector gridVec = TriangleIndexToGridVector (i);
+			Debug.Log (gridVec.x.ToString () + "," + gridVec.y.ToString ());
+
+			Direction direc = OppositeDirection (Direction.Right);//TriangleIndexToDirection (i);// direction [gridVec.x, gridVec.y];
+
+			Vector2 topLeft, topRight, botLeft, botRight;
+			if (direc == Direction.Blocked || direc == Direction.Target || direc == Direction.UnChecked) {
+				topLeft  = Vector2.zero;
+				topRight = Vector2.zero;
+				botLeft  = Vector2.zero;
+				botRight = Vector2.zero;
+			} else if (direc == Direction.Right) {
+				topLeft  = new Vector2 (0.5f, 1.0f);
+				topRight = new Vector2 (1.0f, 1.0f);
+				botLeft  = new Vector2 (0.5f, 0.5f);
+				botRight = new Vector2 (1.0f, 0.5f);
+			} else if (direc == Direction.Left) {
+				topLeft  = new Vector2 (0.0f, 1.0f);
+				topRight = new Vector2 (0.5f, 1.0f);
+				botLeft  = new Vector2 (0.0f, 0.5f);
+				botRight = new Vector2 (0.5f, 0.5f);
+			} else if (direc == Direction.Down) {
+				topLeft  = new Vector2 (0.0f, 0.5f);
+				topRight = new Vector2 (0.5f, 0.5f);
+				botLeft  = new Vector2 (0.0f, 0.0f);
+				botRight = new Vector2 (0.5f, 0.0f);
+			} else {
+				topLeft  = new Vector2 (0.0f, 0.0f);
+				topRight = new Vector2 (1.0f, 0.5f);
+				botLeft  = new Vector2 (0.5f, 0.0f);
+				botRight = new Vector2 (1.0f, 0.0f);
+			}
+
+			uvs[i + 0] = topRight;
+			uvs[i + 1] = botRight;
+			uvs[i + 2] = topLeft;
+			uvs[i + 3] = botRight;
+			uvs[i + 4] = topLeft;
+			uvs[i + 5] = botLeft;
+		}
+		meshFilter.sharedMesh.uv = uvs;
 	}
 	static void CheckUp (int x, int y) {
 		y++;
 		y = Mathf.Abs (y % direction.GetLength (0));
 		if (direction [x, y] == Direction.UnChecked) {
-			searchers.Add (new Searcher (Direction.Up, x, y));
+			searchers.Add (new Searcher (Direction.Down, x, y));
 		}
 	}
 	static void CheckDown (int x, int y) {
 		y--;
 		y = Mathf.Abs (y % direction.GetLength (0));
 		if (direction [x, y] == Direction.UnChecked) {
-			searchers.Add (new Searcher (Direction.Down, x, y));
+			searchers.Add (new Searcher (Direction.Up, x, y));
 		}
 	}
 	static void CheckLeft (int x, int y) {
 		x--;
 		x = Mathf.Abs (x % direction.Length);
 		if (direction [x, y] == Direction.UnChecked) {
-			searchers.Add (new Searcher (Direction.Left, x, y));
+			searchers.Add (new Searcher (Direction.Right, x, y));
 		}
 	}
 	static void CheckRight (int x, int y) {
 		x++;
 		x = Mathf.Abs (x % direction.Length);
 		if (direction [x, y] == Direction.UnChecked) {
-			searchers.Add (new Searcher (Direction.Right, x, y));
+			searchers.Add (new Searcher (Direction.Left, x, y));
 		}
 	}
 	static void ClearDirections () {
@@ -182,8 +249,11 @@ public class TorusNavigator : MonoBehaviour {
 			}
 		}
 	}
-	//void OnDrawGizmos () {
-	//	Gizmos.color = Color.green;
-	//	Gizmos.DrawWireSphere (TriangleIndexToPosition (index), 4);
-	//}
+	[SerializeField] public int x, y;
+	void OnDrawGizmos () {
+		if (!Application.isPlaying)
+			return;
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere (GridVectorToPosition (new GridVector (x,y)), 4);
+	}
 }
