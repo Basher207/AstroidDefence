@@ -62,9 +62,9 @@ public class TorusGenerator : MonoBehaviour {
 			tris.Add (offset);
 			tris.Add (offset + heightVeritcies - 1 + heightVeritcies);
 
-			tris.Add (offset + heightVeritcies - 1 + heightVeritcies);
 			tris.Add (offset);
 			tris.Add (offset + heightVeritcies);
+			tris.Add (offset + heightVeritcies - 1 + heightVeritcies);
 		}
 		offset = x * heightVeritcies;
 		for (int y = 0; y < heightVeritcies - 1; y++) {
@@ -79,10 +79,10 @@ public class TorusGenerator : MonoBehaviour {
 		tris.Add (offset + heightVeritcies - 1);
 		tris.Add (offset);
 		tris.Add (heightVeritcies - 1);
-		
-		tris.Add (heightVeritcies - 1 );
+
 		tris.Add (offset);
 		tris.Add (0);
+		tris.Add (heightVeritcies - 1 );
 
 		return tris.ToArray ();
 	}
