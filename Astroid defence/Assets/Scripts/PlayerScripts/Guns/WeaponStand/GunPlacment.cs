@@ -27,11 +27,14 @@ public class GunPlacment : MonoBehaviour {
 				Vector3 placmentPos = TorusNavigator.TriangleIndexToPosition (hit.triangleIndex * 3);
 
 				TorusNavigator.GridVector gridVector = TorusNavigator.TriangleIndexToGridVector (hit.triangleIndex * 3);
-				TorusNavigator.direction[gridVector.x,gridVector.y] = TorusNavigator.Direction.Blocked;
-				TorusNavigator.UpdateDirectionsFrom (0,0);
-				Vector3 normal = hit.normal;
-				Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
-				Instantiate (ToPlace, placmentPos + normal, lookDirection);
+				TorusNavigator.Direction direc = TorusNavigator.direction [gridVector.x, gridVector.y];
+				if (direc != TorusNavigator.Direction.Target && direc != TorusNavigator.Direction.Blocked) {
+					TorusNavigator.direction[gridVector.x,gridVector.y] = TorusNavigator.Direction.Blocked;
+					TorusNavigator.UpdateDirectionsFrom (0,0);
+					Vector3 normal = hit.normal;
+					Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
+					Instantiate (ToPlace, placmentPos + normal, lookDirection);
+				}
 			}
 		}
 	}
