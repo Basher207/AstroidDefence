@@ -63,7 +63,7 @@ public class TorusNavigator : MonoBehaviour {
 	}
 
 	#endregion
-
+	#region MonoBehavior
 	public static TorusNavigator instance;
 	public static Vector3 [] verts;
 	public static int	  [] tris;
@@ -83,11 +83,18 @@ public class TorusNavigator : MonoBehaviour {
 		direction 	 = new Direction[vertexWidth, vertexHeight];
 		UpdateDirectionsFrom (0, 0);
 	}
+	#endregion
 	#region Helper functions
 	public static Direction TriangleIndexToDirection (int index) {
 
 		GridVector gridVector = TriangleIndexToGridVector (index);
 		return direction [gridVector.x, gridVector.y];
+	}
+	public static Vector3 TriangleIndexToMovementVector (int index) {
+		Direction direction = TriangleIndexToDirection (index);
+		Vector3 position = TriangleIndexToPosition (index);
+		Vector3 tangent = tangentAtPoint (position);
+		return Vector3.zero;
 	}
 	public static GridVector TriangleIndexToGridVector (int index) {
 		index /= 6;
@@ -149,6 +156,7 @@ public class TorusNavigator : MonoBehaviour {
 		return tangnet;
 	}
 	#endregion
+	#region Searching
 	public static void UpdateDirectionsFrom (int x, int y) {
 		ClearDirections ();
 		if (direction [x, y] == Direction.Blocked) {
@@ -168,49 +176,6 @@ public class TorusNavigator : MonoBehaviour {
 			i = searchers.Count - 1;
 		}
 		SetUvsToDirections ();
-	}
-	public static void SetUvsToDirections () {
-		Vector2 [] uvs = new Vector2[verts.Length];
-		for (int i = 0; i < uvs.Length - 5; i+= 6) {
-			GridVector gridVec = TriangleIndexToGridVector (i);
-
-			Direction direc = OppositeDirection (TriangleIndexToDirection (i));// direction [gridVec.x, gridVec.y];
-			
-			Vector2 topLeft, topRight, botLeft, botRight;
-			if (direc == Direction.Blocked || direc == Direction.Target || direc == Direction.UnChecked) {
-				topLeft  = Vector2.zero;
-				topRight = Vector2.zero;
-				botLeft  = Vector2.zero;
-				botRight = Vector2.zero;
-			} else if (direc == Direction.Right) {
-				topLeft  = new Vector2 (0.5f, 1.0f);
-				topRight = new Vector2 (1.0f, 1.0f);
-				botLeft  = new Vector2 (0.5f, 0.5f);
-				botRight = new Vector2 (1.0f, 0.5f);
-			} else if (direc == Direction.Left) {
-				topLeft  = new Vector2 (0.0f, 1.0f);
-				topRight = new Vector2 (0.5f, 1.0f);
-				botLeft  = new Vector2 (0.0f, 0.5f);
-				botRight = new Vector2 (0.5f, 0.5f);
-			} else if (direc == Direction.Down) {
-				topLeft  = new Vector2 (0.0f, 0.5f);
-				topRight = new Vector2 (0.5f, 0.5f);
-				botLeft  = new Vector2 (0.0f, 0.0f);
-				botRight = new Vector2 (0.5f, 0.0f);
-			} else {
-				topLeft  = new Vector2 (0.5f, 0.5f);
-				topRight = new Vector2 (1.0f, 0.5f);
-				botLeft  = new Vector2 (0.5f, 0.0f);
-				botRight = new Vector2 (1.0f, 0.0f);
-			}
-			uvs[i + 0] = topRight;
-			uvs[i + 1] = botRight;
-			uvs[i + 2] = topLeft;
-			uvs[i + 3] = botRight;
-			uvs[i + 4] = botLeft;
-			uvs[i + 5] = topLeft;
-		}
-		meshFilter.sharedMesh.uv = uvs;
 	}
 	static void CheckUp (int x, int y) {
 		y++;
@@ -254,17 +219,50 @@ public class TorusNavigator : MonoBehaviour {
 			num = max + num;
 		return num;
 	}
-	[SerializeField] public int x, y;
-	[SerializeField] public int index;
-	[SerializeField] public Direction d;
-	void OnDrawGizmos () {
-		if (!Application.isPlaying)
-			return;
-		Gizmos.color = Color.green;
-		Gizmos.DrawWireSphere (transform.TransformPoint (verts[index]), 4);
-		GridVector gridV = TriangleIndexToGridVector (index);
-		x = gridV.x;
-		y = gridV.y;
-		d = direction [x,y];
+	#endregion
+	#region debugging
+	public static void SetUvsToDirections () {
+		Vector2 [] uvs = new Vector2[verts.Length];
+		for (int i = 0; i < uvs.Length - 5; i+= 6) {
+			GridVector gridVec = TriangleIndexToGridVector (i);
+
+			Direction direc = OppositeDirection (TriangleIndexToDirection (i));// direction [gridVec.x, gridVec.y];
+			
+			Vector2 topLeft, topRight, botLeft, botRight;
+			if (direc == Direction.Blocked || direc == Direction.Target || direc == Direction.UnChecked) {
+				topLeft  = Vector2.zero;
+				topRight = Vector2.zero;
+				botLeft  = Vector2.zero;
+				botRight = Vector2.zero;
+			} else if (direc == Direction.Right) {
+				topLeft  = new Vector2 (0.5f, 1.0f);
+				topRight = new Vector2 (1.0f, 1.0f);
+				botLeft  = new Vector2 (0.5f, 0.5f);
+				botRight = new Vector2 (1.0f, 0.5f);
+			} else if (direc == Direction.Left) {
+				topLeft  = new Vector2 (0.0f, 1.0f);
+				topRight = new Vector2 (0.5f, 1.0f);
+				botLeft  = new Vector2 (0.0f, 0.5f);
+				botRight = new Vector2 (0.5f, 0.5f);
+			} else if (direc == Direction.Down) {
+				topLeft  = new Vector2 (0.0f, 0.5f);
+				topRight = new Vector2 (0.5f, 0.5f);
+				botLeft  = new Vector2 (0.0f, 0.0f);
+				botRight = new Vector2 (0.5f, 0.0f);
+			} else {
+				topLeft  = new Vector2 (0.5f, 0.5f);
+				topRight = new Vector2 (1.0f, 0.5f);
+				botLeft  = new Vector2 (0.5f, 0.0f);
+				botRight = new Vector2 (1.0f, 0.0f);
+			}
+			uvs[i + 0] = topRight;
+			uvs[i + 1] = botRight;
+			uvs[i + 2] = topLeft;
+			uvs[i + 3] = botRight;
+			uvs[i + 4] = botLeft;
+			uvs[i + 5] = topLeft;
+		}
+		meshFilter.sharedMesh.uv = uvs;
 	}
+	#endregion
 }

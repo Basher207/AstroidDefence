@@ -131,8 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1372907
 MeshRenderer:
@@ -235,8 +239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &87064163
 MeshRenderer:
@@ -339,8 +347,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &90756446
 MeshRenderer:
@@ -443,8 +455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &104394558
 MeshRenderer:
@@ -633,8 +649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &263280355
 MeshRenderer:
@@ -737,8 +757,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &270200390
 MeshRenderer:
@@ -989,8 +1013,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &418861268
 MeshRenderer:
@@ -1213,8 +1241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &467278464
 MeshRenderer:
@@ -1317,8 +1349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &500249918
 MeshRenderer:
@@ -1421,8 +1457,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &508409468
 MeshRenderer:
@@ -1525,8 +1565,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &510168712
 MeshRenderer:
@@ -1629,8 +1673,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &600655262
 MeshRenderer:
@@ -1733,8 +1781,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &670512275
 MeshRenderer:
@@ -1837,8 +1889,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &694223351
 MeshRenderer:
@@ -1941,8 +1997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &718160585
 MeshRenderer:
@@ -2045,8 +2105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &771934199
 MeshRenderer:
@@ -2149,8 +2213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &774933360
 MeshRenderer:
@@ -2253,8 +2321,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &878851874
 MeshRenderer:
@@ -2357,8 +2429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &900593601
 MeshRenderer:
@@ -2461,8 +2537,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &926861825
 MeshRenderer:
@@ -2767,8 +2847,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1051374017
 MeshRenderer:
@@ -2871,8 +2955,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1093023848
 MeshRenderer:
@@ -3051,8 +3139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1178971230
 MeshRenderer:
@@ -3109,6 +3201,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1935352924}
   m_RootOrder: 40
+--- !u!1 &1182819985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1182819989}
+  - 33: {fileID: 1182819988}
+  - 136: {fileID: 1182819987}
+  - 23: {fileID: 1182819986}
+  - 114: {fileID: 1182819990}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1182819986
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182819985}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1182819987
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182819985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1182819988
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182819985}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1182819989
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182819985}
+  m_LocalRotation: {x: .0788314342, y: -.70521915, z: -.0516333729, w: .702698827}
+  m_LocalPosition: {x: 487.200012, y: -316, z: -33.4000015}
+  m_LocalScale: {x: 14.6650229, y: 19.1244488, z: 14.66502}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+--- !u!114 &1182819990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182819985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4687251356da34bcbad95a51e6abdb55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  castVector: {x: 0, y: -1, z: 0}
+  vectorUp: {x: 1, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: 0}
+  ToBottom: 0
 --- !u!1 &1201353016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,8 +3340,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1201353019
 MeshRenderer:
@@ -3259,8 +3448,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1207440524
 MeshRenderer:
@@ -3422,10 +3615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701abb8670fbc48a3b7561a7d35edff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  index: 0
-  d: 0
 --- !u!1 &1278979913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,8 +3661,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1278979916
 MeshRenderer:
@@ -3576,8 +3769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1371734748
 MeshRenderer:
@@ -3770,8 +3967,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1402247984
 MeshRenderer:
@@ -3874,8 +4075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1493217563
 MeshRenderer:
@@ -3978,8 +4183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1499760562
 MeshRenderer:
@@ -4082,8 +4291,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1506216715
 MeshRenderer:
@@ -4186,8 +4399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1509224386
 MeshRenderer:
@@ -4290,8 +4507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1562769215
 MeshRenderer:
@@ -4394,8 +4615,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1583065609
 MeshRenderer:
@@ -4498,8 +4723,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1596882904
 MeshRenderer:
@@ -4602,8 +4831,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1624016599
 MeshRenderer:
@@ -4706,8 +4939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1654374139
 MeshRenderer:
@@ -4810,8 +5047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1662479434
 MeshRenderer:
@@ -4914,8 +5155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1679166877
 MeshRenderer:
@@ -5066,8 +5311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1725047033
 MeshRenderer:
@@ -5170,8 +5419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1725891347
 MeshRenderer:
@@ -5274,8 +5527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1729684144
 MeshRenderer:
@@ -5426,8 +5683,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1773544297
 MeshRenderer:
@@ -5603,8 +5864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1874834410
 MeshRenderer:
@@ -5848,8 +6113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &1971438418
 MeshRenderer:
@@ -5952,8 +6221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &2008463739
 MeshRenderer:
@@ -6252,8 +6525,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 150
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &2121206407
 MeshRenderer:
