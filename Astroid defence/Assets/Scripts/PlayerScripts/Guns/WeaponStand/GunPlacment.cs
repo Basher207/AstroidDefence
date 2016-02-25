@@ -15,14 +15,15 @@ public class GunPlacment : MonoBehaviour {
 	public LayerMask standLayer;
 	[SerializeField] public GameObject ToPlace;
 
-	//public Vector3 viewPortPoint = new Vector3 (0.5f,0.7f,0);
+	public Vector3 viewPortPoint = new Vector3 (0.5f,0.7f,0);
 
 	void Awake () {
 		instance = this;
+		ToggleMouse ();
 	}
 	void Update () {
 		RaycastHit hit;
-		if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit, Mathf.Infinity, standLayer)) {
+		if (Physics.Raycast (Camera.main.ViewportPointToRay (viewPortPoint), out hit, Mathf.Infinity, standLayer)) {
 			if (Input.GetKeyDown (placmentKey)) {
 				Vector3 placmentPos = TorusNavigator.TriangleIndexToPosition (hit.triangleIndex * 3);
 
@@ -37,5 +38,13 @@ public class GunPlacment : MonoBehaviour {
 				}
 			}
 		}
+	}
+	public void ToggleMouse () {
+		if (Cursor.lockState == CursorLockMode.Locked)
+			Cursor.lockState = CursorLockMode.None;
+		else 
+			Cursor.lockState = CursorLockMode.Locked;
+
+		Cursor.visible = !Cursor.visible;
 	}
 }

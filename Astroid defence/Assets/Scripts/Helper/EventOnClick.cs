@@ -5,11 +5,13 @@ using System.Collections;
 public class EventOnClick : MonoBehaviour {
 
 	public UnityEvent unityEvent;
-
+	public bool DestroyOnCall = true;
+	public KeyCode keyCode;
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+		if (Input.GetKeyDown (keyCode)) {
 			unityEvent.Invoke ();
-			Destroy (this);
+			if (DestroyOnCall)
+				Destroy (this);
 		}
 	}
 }
