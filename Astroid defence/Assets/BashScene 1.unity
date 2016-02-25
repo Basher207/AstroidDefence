@@ -1282,8 +1282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-  waitBetweenSpawns: .100000001
-  numberOfSpawns: 200
+  waitBetweenSpawns: .0500000007
+  numberOfSpawns: 600
   timeForSpawn: .200000003
 --- !u!1 &2039093404
 GameObject:
