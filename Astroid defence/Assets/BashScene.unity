@@ -923,8 +923,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigator: {fileID: 1216784359}
   gravity: 300
+  moveForce: 0
+  shipLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToMove: 0
   rigidBody: {fileID: 0}
 --- !u!23 &771934199
 MeshRenderer:
@@ -2818,6 +2822,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  DestroyOnCall: 1
+  keyCode: 0
 --- !u!1 &2067616453
 GameObject:
   m_ObjectHideFlags: 0
