@@ -14,7 +14,7 @@ GameObject:
   - 135: {fileID: 13576100}
   m_Layer: 12
   m_Name: Gold
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 0
   speed: 0
+  magnet: 0
+  ironValue: 0
+  goldValue: 0
 --- !u!135 &13576100
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -107,6 +110,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
