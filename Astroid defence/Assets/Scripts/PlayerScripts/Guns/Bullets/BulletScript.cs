@@ -3,13 +3,12 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 
+	[SerializeField] public float damage = 5f;
+
 	void OnCollisionEnter (Collision coll) {
-		if (coll.transform.CompareTag ("Astroid") || coll.transform.CompareTag ("TargetedAstroid")) {
-
-			GameMang.astroidDestroyed ();
-
-			Destroy (coll.transform.gameObject);
-			Destroy (gameObject);
-		}
+		HealthScript healthScript = coll.transform.GetComponent<HealthScript> ();
+		if (healthScript)
+			healthScript.TakeDamage (damage);
+		Destroy (gameObject);
 	}
 }

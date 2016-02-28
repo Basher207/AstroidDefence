@@ -23,5 +23,11 @@ public class PlayerControlScript : MonoBehaviour {
 		float perpendicular = Input.GetAxis ("UpDown");
 
 		moveScript.FixedMove (transform.forward * vertical + transform.right * horizontal, arrow.x, arrow.y, perpendicular, Input.GetKey (KeyCode.LeftShift));
+		Quaternion rot = transform.rotation;
+		
+		Vector3 axis;
+		float angle;
+		rot.ToAngleAxis (out angle, out axis);
+
 	}
 }

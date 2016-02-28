@@ -34,7 +34,7 @@ GameObject:
   - 114: {fileID: 11472992}
   - 114: {fileID: 11497526}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MountedGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,9 +112,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184300}
-  m_LocalRotation: {x: -1.19209275e-07, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .400000006, z: 14.5}
-  m_LocalScale: {x: 8.57352066, y: 8.57352448, z: 2.15323043}
+  m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .707106769}
+  m_LocalPosition: {x: 0, y: 24.2999992, z: -.140811682}
+  m_LocalScale: {x: 4.11982155, y: 4.11982155, z: 4.11982059}
   m_Children:
   - {fileID: 443222}
   m_Father: {fileID: 474664}
@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 117086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .850000024, y: .850000024, z: .850000024}
   m_Children:
   - {fileID: 474664}
   m_Father: {fileID: 477464}
@@ -162,9 +162,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186704}
-  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .352015167, y: .352015018, z: 1.4016192}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418638}
   m_Father: {fileID: 442614}
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 488.233795, y: -262.238617, z: 101.321159}
+  m_LocalPosition: {x: 264.100006, y: -322, z: -544.200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442614}
@@ -354,17 +354,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5e86bda6e2a4aaa818a46debff931d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
   targetRigidBodies: []
-  fire: 0
-  fireSpeed: 200
-  offset: 1.40999997
+  fireSpeed: 250
+  offset: 1.5
   energyPerShot: 4
-  coolDown: .150000006
-  rangeIncreasePerSecond: 40
-  rangeDecreasePerEnter: 40
-  maxRadius: 0
-  sphereColl: {fileID: 0}
+  coolDown: .5
+  timeToAllowShooting: 0
+  ship:
+    serializedVersion: 2
+    m_Bits: 8192
+  enemies:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &11472992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -417,7 +418,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 600
+  m_Radius: 62.5
   m_Center: {x: .000481102616, y: -.00157029124, z: 1.35692799}
 --- !u!1001 &100100000
 Prefab:
