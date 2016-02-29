@@ -239,7 +239,7 @@ public class TorusNavigator : MonoBehaviour {
 		for (int i = 0; i < uvs.Length - 5; i+= 6) {
 			GridVector gridVec = TriangleIndexToGridVector (i);
 
-			Direction direc = OppositeDirection (TriangleIndexToDirection (i));// direction [gridVec.x, gridVec.y];
+			Direction direc = TriangleIndexToDirection (i);// direction [gridVec.x, gridVec.y];
 			
 			Vector2 topLeft, topRight, botLeft, botRight;
 			if (direc == Direction.Blocked || direc == Direction.Target || direc == Direction.UnChecked) {
@@ -248,25 +248,25 @@ public class TorusNavigator : MonoBehaviour {
 				botLeft  = Vector2.zero;
 				botRight = Vector2.zero;
 			} else if (direc == Direction.Right) {
-				topLeft  = new Vector2 (0.5f, 1.0f);
-				topRight = new Vector2 (1.0f, 1.0f);
-				botLeft  = new Vector2 (0.5f, 0.5f);
-				botRight = new Vector2 (1.0f, 0.5f);
+				topLeft  = new Vector2 (1.0f, 0.0f);
+				topRight = new Vector2 (0.0f, 0.0f);
+				botLeft  = new Vector2 (1.0f, 1.0f);
+				botRight = new Vector2 (0.0f, 1.0f);
 			} else if (direc == Direction.Left) {
 				topLeft  = new Vector2 (0.0f, 1.0f);
-				topRight = new Vector2 (0.5f, 1.0f);
-				botLeft  = new Vector2 (0.0f, 0.5f);
-				botRight = new Vector2 (0.5f, 0.5f);
-			} else if (direc == Direction.Down) {
-				topLeft  = new Vector2 (0.0f, 0.5f);
-				topRight = new Vector2 (0.5f, 0.5f);
+				topRight = new Vector2 (1.0f, 1.0f);
 				botLeft  = new Vector2 (0.0f, 0.0f);
-				botRight = new Vector2 (0.5f, 0.0f);
-			} else {
-				topLeft  = new Vector2 (0.5f, 0.5f);
-				topRight = new Vector2 (1.0f, 0.5f);
-				botLeft  = new Vector2 (0.5f, 0.0f);
 				botRight = new Vector2 (1.0f, 0.0f);
+			} else if (direc == Direction.Down) {
+				topLeft  = new Vector2 (1.0f, 1.0f);
+				topRight = new Vector2 (1.0f, 0.0f);
+				botLeft  = new Vector2 (0.0f, 1.0f);
+				botRight = new Vector2 (0.0f, 0.0f);
+			} else {
+				topLeft  = new Vector2 (0.0f, 0.0f);
+				topRight = new Vector2 (0.0f, 1.0f);
+				botLeft  = new Vector2 (1.0f, 0.0f);
+				botRight = new Vector2 (1.0f, 1.0f);
 			}
 			uvs[i + 0] = topRight;
 			uvs[i + 1] = botRight;
