@@ -68,11 +68,12 @@ public class TorusNavigator : MonoBehaviour {
 	public static Vector3 [] verts;
 	public static Vector3 [] normals;
 	public static int	  [] tris;
+
+	public static int searchStartX, searchStartY;
 	void Awake () {
 		instance = this;
 		searchers = new List<Searcher> ();
-	}
-	void Start () {
+
 		if (torus == null) {
 			Destroy (this);
 			return;
@@ -83,7 +84,6 @@ public class TorusNavigator : MonoBehaviour {
 		tris 		 = meshFilter.mesh.triangles;
 		normals 	 = meshFilter.mesh.normals;
 		direction 	 = new Direction[vertexWidth, vertexHeight];
-		UpdateDirectionsFrom (0, 0);
 	}
 	#endregion
 	#region Helper functions
@@ -170,6 +170,9 @@ public class TorusNavigator : MonoBehaviour {
 	}
 	#endregion
 	#region Searching
+	public static void RecalculateDirections () {
+		UpdateDirectionsFrom (searchStartX, searchStartY);
+	}
 	public static void UpdateDirectionsFrom (int x, int y) {
 		ClearDirections ();
 		if (direction [x, y] == Direction.Blocked) {

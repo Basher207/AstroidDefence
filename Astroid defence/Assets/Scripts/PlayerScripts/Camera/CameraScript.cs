@@ -3,18 +3,23 @@ using System.Collections;
 [ExecuteInEditMode]
 public class CameraScript : MonoBehaviour {
 
-	[SerializeField ] public Transform relativeTo;
+	[SerializeField ] public Transform moveTo;
 
-	[SerializeField] public Vector3 relativePosition;
 
-	[SerializeField] public Vector3 rotationOffset;
+	[SerializeField] public float rotateFactor = 5;
+	[SerializeField] public float moveFactor = 5;
 
-	[SerializeField] public float rotateBy = 5;
+	[HideInInspector] public Rigidbody rigidBody;
+
+	void Awake () {
+		rigidBody = GetComponent<Rigidbody> ();
+	}
 
 	void Update () {
-		transform.position = relativeTo.TransformPoint (relativePosition);
-		Vector3 relativeUp = relativeTo.up;
-		relativeUp.z = 0;
-		transform.LookAt (relativeTo.position + rotationOffset, relativeUp);
+		Vector3 axis;
+		float angle;
+		moveTo.rotation.ToAngleAxis (out angle, out axis);
+		rigidBody.AddForce ((moveTo.position - transform.position).normalized * moveFactor * Time.deltaTime);
+		rigidBody.AddTorque (axis / 180f * angle * rotateFactor);
 	}
 }

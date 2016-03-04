@@ -11,9 +11,18 @@ public class GunPlacment : MonoBehaviour {
 		}
 	}
 
-	public KeyCode placmentKey;
-	public LayerMask standLayer;
-	[SerializeField] public GameObject ToPlace;
+	[SerializeField] public KeyCode placmentKey;
+
+	[SerializeField] public LayerMask standLayer;
+
+	[SerializeField] public GameObject[] guns;
+	[HideInInspector]public int currentSelectedIndex;
+
+	public GameObject ToPlace {
+		get {
+			return guns[currentSelectedIndex];
+		}
+	}
 
 	public Vector3 viewPortPoint = new Vector3 (0.5f,0.7f,0);
 
@@ -31,11 +40,20 @@ public class GunPlacment : MonoBehaviour {
 				TorusNavigator.Direction direc = TorusNavigator.direction [gridVector.x, gridVector.y];
 				if (direc != TorusNavigator.Direction.Target && direc != TorusNavigator.Direction.Blocked) {
 					TorusNavigator.direction[gridVector.x,gridVector.y] = TorusNavigator.Direction.Blocked;
-					TorusNavigator.UpdateDirectionsFrom (0,0);
+					TorusNavigator.RecalculateDirections ();
 					Vector3 normal = hit.normal;
 					Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
 					Instantiate (ToPlace, placmentPos + normal, lookDirection);
 				}
+			}
+		}
+		string inputString = Input.inputString;
+		foreach (char inputChar in inputString) {
+			if (inputChar > '0'&& inputChar <= '9') {
+				int index = (int) (inputChar - '0' - 1);
+				if (index < guns.Length)
+					currentSelectedIndex = index;
+				return;
 			}
 		}
 	}

@@ -31,6 +31,12 @@ public static class Math {
 	public static float NegativeQuadratic (float a, float b, float c)  {
 		return (-b - Mathf.Sqrt (b * b - 4 * a * c)) / (2 * a);
 	}
+	public static int WrapNumber (int num, int max) {
+		num %= max;
+		if (num < 0)
+			num = max + num;
+		return num;
+	}
 	#endregion
 
 	#region Mesh
