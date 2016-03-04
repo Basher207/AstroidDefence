@@ -25,7 +25,6 @@ public class GunPlacment : MonoBehaviour {
 	}
 
 	public Vector3 viewPortPoint = new Vector3 (0.5f,0.7f,0);
-
 	void Awake () {
 		instance = this;
 		ToggleMouse ();
@@ -33,7 +32,7 @@ public class GunPlacment : MonoBehaviour {
 	void Update () {
 		RaycastHit hit;
 		if (Physics.Raycast (Camera.main.ViewportPointToRay (viewPortPoint), out hit, Mathf.Infinity, standLayer)) {
-			if (Input.GetKeyDown (placmentKey)) {
+			if (Input.GetKey (placmentKey)) {
 				Vector3 placmentPos = TorusNavigator.TriangleIndexToPosition (hit.triangleIndex * 3);
 
 				TorusNavigator.GridVector gridVector = TorusNavigator.TriangleIndexToGridVector (hit.triangleIndex * 3);

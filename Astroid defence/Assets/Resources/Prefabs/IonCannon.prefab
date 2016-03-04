@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119966}
   m_LocalRotation: {x: -.227369979, y: .743600488, z: -.176237851, w: .603573978}
-  m_LocalPosition: {x: 559.669983, y: -331.399994, z: -75.6600037}
+  m_LocalPosition: {x: 424.259918, y: -328.348206, z: -663.31427}
   m_LocalScale: {x: .520764709, y: .520764709, z: .520764709}
   m_Children:
   - {fileID: 468630}
@@ -289,15 +289,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630d94e12624c4b6d9d903689a1a48e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 1
+  coolDown: 3
   offset: 25
   speed: 200
   destroyAfterTime: 7
   bullet: {fileID: 119230, guid: b154802e257574065be92128687f51b7, type: 2}
   yRotation: {fileID: 420404}
   point: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8192
   timeToFire: 0
-  target: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
