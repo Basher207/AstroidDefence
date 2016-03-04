@@ -11,9 +11,6 @@ public class PlayerControlScript : MonoBehaviour {
 		moveScript = GetComponent<MoveScript> ();
 	}
 	void Update () {
-		if (Input.GetKeyDown (correctRotationKey)) {
-			transform.eulerAngles = Vector3.zero;
-		}
 	}
 	void FixedUpdate () {
 		Vector2 arrow = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
@@ -23,11 +20,13 @@ public class PlayerControlScript : MonoBehaviour {
 		float perpendicular = Input.GetAxis ("UpDown");
 
 		moveScript.FixedMove (transform.forward * vertical + transform.right * horizontal, arrow.x, arrow.y, perpendicular, Input.GetKey (KeyCode.LeftShift));
-		Quaternion rot = transform.rotation;
-		
-		Vector3 axis;
-		float angle;
-		rot.ToAngleAxis (out angle, out axis);
-
+	}
+	void OnDrawGizmos () {
+		Vector3 targetRight = transform.right;
+		targetRight.y = 0;
+		targetRight.Normalize ();
+		Quaternion rotateBy = Quaternion.FromToRotation (transform.right, targetRight);
+		Gizmos.DrawLine (transform.position + transform.right * 5f, transform.position);
+		Gizmos.DrawLine (transform.position + targetRight * 5f, transform.position);
 	}
 }

@@ -7,7 +7,7 @@ public class MoveScript : MonoBehaviour {
 	public float turboForce = 400;
 	public float torqueForce = 280;
 
-	public float correctionForce;
+	public float correctionForce = 20f;
 
 	public float perpendicularTurboFactor = 1.5f;
 	public float perpendicularForce = 50;
@@ -38,7 +38,12 @@ public class MoveScript : MonoBehaviour {
 		euler.x += xRotation * Time.deltaTime *-torqueForce;
 		
 		Quaternion rotation = transform.rotation * Quaternion.Euler (euler);
+
+
+		rotation = Quaternion.RotateTowards (rotation, Quaternion.LookRotation (rotation * Vector3.forward, Vector3.up), correctionForce * Time.deltaTime);
+
 		rigid.MoveRotation (rotation);
 		rigid.velocity = vel;
+		
 	}
 }

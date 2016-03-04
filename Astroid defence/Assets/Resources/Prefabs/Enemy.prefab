@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2366978}
   - 114: {fileID: 11455928}
   - 54: {fileID: 5406368}
-  - 114: {fileID: 11426576}
+  - 114: {fileID: 11405566}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Astroid
@@ -79,7 +79,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11426576
+--- !u!114 &11405566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,11 +87,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 115810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e749dc5d0f3754ea29c6d0b669accfaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c4e350f0b374ffc85b9657d9b1dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 75
   currentHealth: 0
+  maxHealthColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  deadColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &11455928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +141,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 100
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealthColor.r
+      value: .0758619234
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealthColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealthColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deadColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deadColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deadColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
