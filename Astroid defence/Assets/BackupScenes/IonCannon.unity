@@ -1315,6 +1315,8 @@ MonoBehaviour:
   waitBetweenSpawns: .0500000007
   numberOfSpawns: 100
   spawnsPerInstance: 3
+  keyToAdd: 109
+  numberOfAdditions: 100
   timeForSpawn: .200000003
 --- !u!1 &1960208067
 GameObject:
@@ -1565,7 +1567,8 @@ MonoBehaviour:
   standLayer:
     serializedVersion: 2
     m_Bits: 8192
-  ToPlace: {fileID: 108502, guid: 32d72a79465064c1694191053a57412f, type: 2}
+  guns: []
+  currentSelectedIndex: 0
   viewPortPoint: {x: .5, y: .5, z: 0}
 --- !u!114 &2039093416
 MonoBehaviour:
