@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250eb2744a7a64574b531488d3774e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
   maxRadius: 80
   time: .300000012
-  explosionForce: 1000
+  explosionForce: 400
   astroids:
     serializedVersion: 2
     m_Bits: 256
@@ -117,11 +117,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: explosionForce
-      value: 1000
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: astroids.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

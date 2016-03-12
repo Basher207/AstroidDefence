@@ -44,8 +44,8 @@ public class TorusNavigator : MonoBehaviour {
 			TorusNavigator.CheckLeft 	(gridVector.x, gridVector.y);
 		}
 	}
-	public static Direction [,] direction;
-
+	public static Direction  [,] direction;
+	public static GameObject [,] turrets;
 	#endregion
 	#region fieldAndProperties
 	static int vertexWidth, vertexHeight;

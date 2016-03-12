@@ -1,44 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &115810
+--- !u!1 &104550
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 410766}
-  - 33: {fileID: 3349710}
-  - 135: {fileID: 13553704}
-  - 23: {fileID: 2366978}
-  - 114: {fileID: 11455928}
-  - 54: {fileID: 5406368}
-  - 114: {fileID: 11405566}
+  - 4: {fileID: 444978}
+  - 33: {fileID: 3335812}
+  - 135: {fileID: 13575638}
+  - 23: {fileID: 2380846}
+  - 114: {fileID: 11423586}
+  - 54: {fileID: 5417118}
+  - 114: {fileID: 11440654}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: SomeBall
   m_TagString: Astroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &410766
+--- !u!4 &444978
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -144.199997, y: 112.800003, z: 176}
+  m_LocalPosition: {x: 620.599976, y: -314.399994, z: -73.5999985}
   m_LocalScale: {x: 5.5021286, y: 5.50212908, z: 5.50212908}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2366978
+--- !u!23 &2380846
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,19 +57,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3349710
+--- !u!33 &3335812
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5406368
+--- !u!54 &5417118
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 2
@@ -79,27 +79,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11405566
+--- !u!114 &11423586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c4e350f0b374ffc85b9657d9b1dd26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
-  currentHealth: 0
-  maxHealthColor: {r: .0758619234, g: 0, b: 1, a: 0}
-  deadColor: {r: 1, g: 0, b: 0, a: 0}
---- !u!114 &11455928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95213a9b306a48fa99e1f801d6b9c2d, type: 3}
@@ -112,12 +97,27 @@ MonoBehaviour:
     m_Bits: 8192
   distanceToMove: 10
   rigidBody: {fileID: 0}
---- !u!135 &13553704
+--- !u!114 &11440654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c4e350f0b374ffc85b9657d9b1dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1500
+  currentHealth: 0
+  maxHealthColor: {r: .0758619234, g: 0, b: 1, a: 0}
+  deadColor: {r: 1, g: 0, b: 0, a: 0}
+--- !u!135 &13575638
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115810}
+  m_GameObject: {fileID: 104550}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -130,44 +130,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Astroid
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: maxHealth
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: maxHealthColor.r
-      value: .0758619234
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: maxHealthColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: maxHealthColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: deadColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: deadColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: deadColor.b
-      value: 0
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 115810}
+  m_RootGameObject: {fileID: 104550}
   m_IsPrefabParent: 1

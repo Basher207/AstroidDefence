@@ -11,7 +11,8 @@ public class GunPlacment : MonoBehaviour {
 		}
 	}
 
-	[SerializeField] public KeyCode placmentKey;
+	[SerializeField] public KeyCode placmentKey = KeyCode.Mouse0;
+	[SerializeField] public KeyCode removeKey 	= KeyCode.Mouse1;
 
 	[SerializeField] public LayerMask standLayer;
 
@@ -44,6 +45,8 @@ public class GunPlacment : MonoBehaviour {
 					Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
 					Instantiate (ToPlace, placmentPos + normal, lookDirection);
 				}
+			} else if (Input.GetKey (removeKey)) {
+
 			}
 		}
 		string inputString = Input.inputString;

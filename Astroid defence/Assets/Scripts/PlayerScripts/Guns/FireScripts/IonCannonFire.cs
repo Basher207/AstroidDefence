@@ -25,7 +25,7 @@ public class IonCannonFire : MonoBehaviour {
 	void Start () {
 		timeToFire = Time.time + coolDown;
 	}
-	void FixedUpdate () {
+	void Update () {
 		if (Input.GetKey (KeyCode.P)) {
 			RaycastHit hit;
 			if (Physics.Raycast (Camera.main.ViewportPointToRay (GunPlacment.instance.viewPortPoint), out hit, Mathf.Infinity, layerMask)) {
@@ -34,6 +34,8 @@ public class IonCannonFire : MonoBehaviour {
 					point = hit.point;
 			}
 		}
+	}
+	void FixedUpdate () {
 		if (Time.time > timeToFire) {
 			timeToFire = Time.time + coolDown;
 			GameObject bullet = Instantiate (this.bullet, transform.position + transform.up * offset, transform.rotation) as GameObject;
