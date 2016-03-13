@@ -7,7 +7,11 @@ namespace Game.Resource {
 	}
 	public class GameResources : MonoBehaviour {
 		private static GameResources instance;
-		
+
+		//public static GameObject UIGO;
+
+
+
 		#region static 
 		public static float showIron()//returns iron value
 		{
@@ -43,7 +47,8 @@ namespace Game.Resource {
 			instance.health -= amount;
 			if (instance.health <= 0) {
 				//ship be dead, game be lost
-
+				instance.health=0;
+				GameObject.Find("Canvas").GetComponent<UI>().shipDown();// I know it's not perfect, fix it later
 			}
 		}
 
