@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Game.Resource;
 
 public class GunPlacment : MonoBehaviour {
 
@@ -38,12 +39,13 @@ public class GunPlacment : MonoBehaviour {
 
 				TorusNavigator.GridVector gridVector = TorusNavigator.TriangleIndexToGridVector (hit.triangleIndex * 3);
 				TorusNavigator.Direction direc = TorusNavigator.direction [gridVector.x, gridVector.y];
-				if (direc != TorusNavigator.Direction.Target && direc != TorusNavigator.Direction.Blocked) {
+				if (direc != TorusNavigator.Direction.Target && direc != TorusNavigator.Direction.Blocked && GameResources.UseIron(40.0f)) {
 					TorusNavigator.direction[gridVector.x,gridVector.y] = TorusNavigator.Direction.Blocked;
 					TorusNavigator.RecalculateDirections ();
 					Vector3 normal = hit.normal;
 					Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
 					Instantiate (ToPlace, placmentPos + normal, lookDirection);
+
 				}
 			} else if (Input.GetKey (removeKey)) {
 

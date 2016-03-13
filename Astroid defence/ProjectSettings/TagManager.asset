@@ -8,6 +8,7 @@ TagManager:
   - TargetedAstroid
   - Iron
   - Gold
+  - reactor
   layers:
   - Default
   - TransparentFX
