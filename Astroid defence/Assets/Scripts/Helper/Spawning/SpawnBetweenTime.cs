@@ -17,7 +17,7 @@ public class SpawnBetweenTime : MonoBehaviour {
 		if (numberOfSpawns > 0 && objectToSpawn != null && Time.time > timeForSpawn) {
 			for (int i = 0; i < spawnsPerInstance && numberOfSpawns > 0; i++) {
 				numberOfSpawns--;
-				(Instantiate (objectToSpawn, transform.position, Quaternion.identity) as GameObject).transform.SetParent (transform);
+				Instantiate (objectToSpawn, transform.position, Quaternion.identity);
 				timeForSpawn = Time.time + waitBetweenSpawns;
 			}
 		}

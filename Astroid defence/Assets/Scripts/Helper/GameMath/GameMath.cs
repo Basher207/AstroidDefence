@@ -45,11 +45,11 @@ public static class Math {
 		List<Vector3> verts = new List<Vector3> ();
 		List<int> tris 		= new List<int> ();
 
-		MeshFilter [] filters = parent.GetComponentsInChildren <MeshFilter> ();
-
+		MeshFilter [] filters = parent.GetComponentsInChildren <MeshFilter> (true);
+		Debug.Log (parent.transform.childCount);
 		for (int i = 0; i < filters.Length; i++) {
-			Vector3 [] thisVerts = filters[i].mesh.vertices;
-			int     [] thisTris  = filters[i].mesh.triangles;
+			Vector3 [] thisVerts = filters[i].sharedMesh.vertices;
+			int     [] thisTris  = filters[i].sharedMesh.triangles;
 
 			int trisOffset = verts.Count;
 

@@ -45,7 +45,6 @@ public class TorusNavigator : MonoBehaviour {
 		}
 	}
 	public static Direction  [,] direction;
-	public static GameObject [,] turrets;
 	#endregion
 	#region fieldAndProperties
 	static int vertexWidth, vertexHeight;
