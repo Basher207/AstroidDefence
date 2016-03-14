@@ -18,7 +18,6 @@ public class IonCannonFire : MonoBehaviour {
 	[HideInInspector] public float timeToFire;
 
 	void Awake () {
-		originalRight 	= transform.right;
 		originalNormal  = transform.up;
 		point = transform.position + originalNormal;
 	}
@@ -46,7 +45,6 @@ public class IonCannonFire : MonoBehaviour {
 	}
 
 	[HideInInspector] private Vector3 originalNormal;
-	[HideInInspector] private Vector3 originalRight;
 
 	void SetDirection () {
 		Vector3 delta = (point - transform.position).normalized;

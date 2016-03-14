@@ -157,7 +157,6 @@ public class TorusNavigator : MonoBehaviour {
 		return instance.transform.TransformPoint (fromPosition);
 	}
 	public static Vector3 tangentAtPoint (Vector3 point) {
-		float radius = torus.radius;
 		point 	= instance.transform.InverseTransformPoint (point);
 		point.y = 0;
 		point = Quaternion.AngleAxis (90, Vector3.up) * point;
@@ -240,8 +239,6 @@ public class TorusNavigator : MonoBehaviour {
 	public static void SetUvsToDirections () {
 		Vector2 [] uvs = new Vector2[verts.Length];
 		for (int i = 0; i < uvs.Length - 5; i+= 6) {
-			GridVector gridVec = TriangleIndexToGridVector (i);
-
 			Direction direc = TriangleIndexToDirection (i);// direction [gridVec.x, gridVec.y];
 			
 			Vector2 topLeft, topRight, botLeft, botRight;

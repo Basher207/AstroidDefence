@@ -25,7 +25,6 @@ public class PlayerControlScript : MonoBehaviour {
 		Vector3 targetRight = transform.right;
 		targetRight.y = 0;
 		targetRight.Normalize ();
-		Quaternion rotateBy = Quaternion.FromToRotation (transform.right, targetRight);
 		Gizmos.DrawLine (transform.position + transform.right * 5f, transform.position);
 		Gizmos.DrawLine (transform.position + targetRight * 5f, transform.position);
 	}

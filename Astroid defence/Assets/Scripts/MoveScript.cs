@@ -27,11 +27,11 @@ public class MoveScript : MonoBehaviour {
 			vel *= perpendicularTurboFactor;
 		vel += appliedForce;
 
-		Vector3 xTorque = Mathf.Clamp (xRotation, -1, 1) * transform.right * torqueForce;
-		Vector3 yTorque = Mathf.Clamp (yRotation, -1, 1) * Vector3.up 	   * torqueForce;
+		//Vector3 xTorque = Mathf.Clamp (xRotation, -1, 1) * transform.right * torqueForce;
+		//Vector3 yTorque = Mathf.Clamp (yRotation, -1, 1) * Vector3.up 	   * torqueForce;
 
 
-		Vector3 angularVelocity  = yTorque * Time.deltaTime;
+		//Vector3 angularVelocity  = yTorque * Time.deltaTime;
 
 		Vector3 euler = Vector3.zero;
 		euler.y += yRotation * Time.deltaTime * torqueForce;
