@@ -15,11 +15,14 @@ public class SpawnBetweenTime : MonoBehaviour {
 
 	void Update () {
 		if (numberOfSpawns > 0 && objectToSpawn != null && Time.time > timeForSpawn) {
+			Rigidbody [] spawns = new Rigidbody[(spawnsPerInstance < numberOfSpawns) ? spawnsPerInstance : numberOfSpawns];
+
 			for (int i = 0; i < spawnsPerInstance && numberOfSpawns > 0; i++) {
 				numberOfSpawns--;
-				Instantiate (objectToSpawn, transform.position, Quaternion.identity);
+				spawns[i] = (Instantiate (objectToSpawn, transform.position, Quaternion.identity) as GameObject).GetComponent<Rigidbody> ();
 				timeForSpawn = Time.time + waitBetweenSpawns;
 			}
+			CupAI.SendRigidBodies (spawns);
 		}
 		if (Input.GetKeyDown (KeyCode.M)) {
 			numberOfSpawns += numberOfAdditions;
