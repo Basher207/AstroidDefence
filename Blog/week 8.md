@@ -1,0 +1,5 @@
+# Week 8
+For this week, we focused on improving the Ion Cannon's shooting and visual effects. We also created a simple UI for the game, and started working on the building and resource limitations.
+We made the enemies drop a certain amount of iron that is automatically acquired by the main ship and sent to the player's ship, so it can be used to build new turrets(which up until now could be built at will limitlessly); for now, the cost of each turret, as well as the amount of iron gotten by each fallen enemy is hard-coded, but this will be changed with the upcoming implementation of a turretValues class, which will hold values for each individual turret, like its cost of production and the cost of its upgrades and researches.
+
+We also started implementing the main ship's destruction mechanism, where upon contact between an enemy and the ship's reactor, the enemy would get destroyed and the ship would take damage(for now, hard-coded as well, will change in the future). This makes defeat now possible, and makes the game more interesting to be played in its current state.
