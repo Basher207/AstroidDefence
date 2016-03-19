@@ -1,0 +1,29 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: justify;
+    width: 50em;
+    margin: auto;
+}
+
+p {
+    margin-top: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    margin-bottom: 0.2em;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+img {
+    width: 150px;
+}

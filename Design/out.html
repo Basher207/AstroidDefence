@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="design.css" type="text/css" />
+</head>
+<body>
+<!-- Project name and logo -->
+<h1 id="interstellar-courier">Interstellar Courier</h1>
+<p><em><a href="TODO">Download</a> from GitHub.</em></p>
+<!-- List of all contributors and their contribution -->
+<p><strong>Brian Confessor</strong> - Lead Audio</p>
+<p><strong>Benedict Henshaw</strong> - Lead Designer</p>
+<p><strong>Bashar Saade</strong> - Lead Programmer</p>
+<hr />
+<!-- The game synopsis -->
+<h2 id="synopsis">Synopsis</h2>
+<p><em>Tower defence in 3D space on the surface on a torus.</em></p>
+<p>While the game borrows largely from other games in the tower defence genre, (specifically those in 3D: <a href="http://en.omd.gameforge.com/">Orcs Must Die</a>, <a href="http://blendogames.com/atomzombiesmasher/">Atom Zombie Smasher</a>) those games generally operate on a 2D plane; the enemies are restricted to movement along a flat surface. Interstellar Courier's gameplay occurs on the surface of a torus; meaning a turret can project an object to an opposing side of the surface on which enemies move, causing the player to think about turret placement in real 3D space.</p>
+<hr />
+<!-- Player profile. -->
+<h2 id="player-profile">Player profile</h2>
+<hr />
+<!--
+The context of your project.
+How does your game fit into the larger industry?
+Why is it different or more unique that other, similar games?
+-->
+<h2 id="industry">Industry</h2>
+<hr />
+<!-- Challenge you faced and overcome -->
+<h2 id="challenges">Challenges</h2>
+<h4 id="path-finding">Path finding</h4>
+<p>One of the reasons why we arrived at a torus was that path finding on it's surface is relatively simple. The map of a torus is a (slightly stretched) grid, meaning common path finding algorithms (e.g. Dijkstra's Algorithm) can operate on it without modification.</p>
+<p><img src="data/torus_flat.jpg" /> <img src="data/torus_tube.jpg" /> <img src="data/torus_final.jpg" /></p>
+<h4 id="understanding-the-effects-of-using-a-torus-as-a-play-surface">Understanding the effects of using a torus as a play surface</h4>
+<p>When looking at the variations of torus, we recognised some interesting properties:</p>
+<ul>
+<li><p>The ratio of the radii of the cross section and the overall torus affects the visibility of a turret built on the inside of the torus verses the outside. Just like how radio towers need to be built very tall to negate effects of the Earth's curvature, the effectiveness of turrets depend greatly on the shape's curvature and their own height.</p></li>
+<li><p>This ratio also affects the how stretched the turret placement grid is. A thick torus with a small overall radius will have smaller grid squares on the inside of the torus, and larger grid squares on the outside of the torus. One could subdivide the larger squares if they are beyond a certain threshold, but the grid will be deformed in a ways that make path finding difficult.</p></li>
+</ul>
+<hr />
+<!-- Next steps -->
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li>Progression in equipment, turret upgrades.</li>
+<li>Variations in enemy types.</li>
+<li>Increasing difficulty over time.</li>
+<li>More and varied turret types.</li>
+<li>Shapes other than a torus; inside of a sphere perhaps?</li>
+</ul>
+</body>
+</html>
