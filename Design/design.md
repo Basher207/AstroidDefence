@@ -1,5 +1,6 @@
 <!-- Project name and logo -->
 # Interstellar Courier
+![](data/logo.jpg)
 
 *[Download](TODO) from GitHub.*
 
@@ -26,13 +27,14 @@ While the game borrows largely from other games in the tower defence genre, (spe
 
 ---
 
-
 <!--
 The context of your project.
 How does your game fit into the larger industry?
 Why is it different or more unique that other, similar games?
 -->
 ## Industry
+
+
 
 ---
 
@@ -42,14 +44,14 @@ Why is it different or more unique that other, similar games?
 #### Path finding
 One of the reasons why we arrived at a torus was that path finding on it's surface is relatively simple. The map of a torus is a (slightly stretched) grid, meaning common path finding algorithms (e.g. Dijkstra's Algorithm) can operate on it without modification.
 
-![](data/torus_flat.jpg)
-![](data/torus_tube.jpg)
-![](data/torus_final.jpg)
+![Plane](data/torus_flat.jpg)
+![Cylinder](data/torus_tube.jpg)
+![Torus](data/torus_final.jpg)
 
 #### Understanding the effects of using a torus as a play surface
 When looking at the variations of torus, we recognised some interesting properties:
 
-+ The ratio of the radii of the cross section and the overall torus affects the visibility of a turret built on the inside of the torus verses the outside. Just like how radio towers need to be built very tall to negate effects of the Earth's curvature, the effectiveness of turrets depend greatly on the shape's curvature and their own height.
++ The ratio of the radii of the tube cross-section and the overall torus affects the visibility of a turret built on the inside of the torus verses the outside. Just like how radio towers need to be built very tall to negate effects of the Earth's curvature, the effectiveness of turrets depend greatly on the shape's curvature and their own height.
 
 + This ratio also affects the how stretched the turret placement grid is. A thick torus with a small overall radius will have smaller grid squares on the inside of the torus, and larger grid squares on the outside of the torus. One could subdivide the larger squares if they are beyond a certain threshold, but the grid will be deformed in a ways that make path finding difficult.
 
@@ -63,4 +65,4 @@ When looking at the variations of torus, we recognised some interesting properti
 + Variations in enemy types.
 + Increasing difficulty over time.
 + More and varied turret types.
-+ Shapes other than a torus; inside of a sphere perhaps?
++ Shapes other than a torus; inside of a sphere?
