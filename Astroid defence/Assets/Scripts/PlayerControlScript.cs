@@ -4,13 +4,8 @@ using System.Collections;
 public class PlayerControlScript : MonoBehaviour {
 
 	MoveScript moveScript;
-
-	public KeyCode correctRotationKey = KeyCode.C;
-
 	void Awake () {
 		moveScript = GetComponent<MoveScript> ();
-	}
-	void Update () {
 	}
 	void FixedUpdate () {
 		Vector2 arrow = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));

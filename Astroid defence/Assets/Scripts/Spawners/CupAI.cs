@@ -32,6 +32,17 @@ public class CupAI : MonoBehaviour {
 	void Awake () {
 		rigidBody = GetComponent<Rigidbody> ();
 	}
+	void Start () {
+		waypoints [dropIndex].position += Random.onUnitSphere * 80f;
+		Vector3 axis = transform.position - transform.parent.position;
+		Vector3 centerPoint = (transform.parent.position - transform.position) / 2f + transform.position;
+
+		for (int i = 0; i < waypoints.Count; i++) {
+			if (waypoints[i] != transform.parent) {
+				waypoints[i].RotateAround (centerPoint, axis, Random.Range (-20,20));
+			}
+		}
+	}
 
 	void Update () {
 		Vector3 delta = waypoints [currentIndex].position - transform.position;

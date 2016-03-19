@@ -23,6 +23,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420404}
+  - 33: {fileID: 3306678}
+  - 23: {fileID: 2352052}
+  - 64: {fileID: 6402418}
+  - 114: {fileID: 11487042}
   m_Layer: 14
   m_Name: IonCannon
   m_TagString: Untagged
@@ -197,6 +201,30 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2352052
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119966}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e14f2b4e48f6044debc8a75c7cce3855, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2384854
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -221,6 +249,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!33 &3306678
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119966}
+  m_Mesh: {fileID: 4300004, guid: 9c141e7ba285144958e6188f44e01de7, type: 3}
 --- !u!33 &3308190
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -242,6 +277,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136940}
   m_Mesh: {fileID: 4300004, guid: b4cbe004032164b6187b622fc0a1e5b8, type: 3}
+--- !u!64 &6402418
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300004, guid: 9c141e7ba285144958e6188f44e01de7, type: 3}
 --- !u!64 &6412352
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -301,6 +348,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   timeToFire: 0
+--- !u!114 &11487042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782b6139fe760423c848188c8eca1a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunCost: 500
+  upgradeCost: 50
+  uiDistanceAbove: 70
+  upgrade: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -311,6 +373,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gunCost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: upgradeCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uiDistanceAbove
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

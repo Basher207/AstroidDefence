@@ -27,7 +27,7 @@ public class IonCannonFire : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.P)) {
 			RaycastHit hit;
-			if (Physics.Raycast (Camera.main.ViewportPointToRay (GunPlacment.instance.viewPortPoint), out hit, Mathf.Infinity, layerMask)) {
+			if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit, Mathf.Infinity, layerMask)) {
 				Vector3 delta = hit.point - transform.position;
 				if (Vector3.Angle (delta, originalNormal) < maxRotationAngle)
 					point = hit.point;

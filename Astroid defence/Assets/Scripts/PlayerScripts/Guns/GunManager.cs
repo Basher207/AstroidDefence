@@ -10,9 +10,9 @@ namespace Game.Guns {
 		public GameObject prefab;
 		public Mesh previewMesh;
 		public float cost;
-		public Gun (GameObject prefab, float cost) {
+		public Gun (GameObject prefab) {
 			this.prefab = prefab;
-			this.cost = cost;
+			this.cost = prefab.GetComponent<BuyableGun> ().gunCost;
 			previewMesh = new Mesh ();
 			Math.CombineMeshes (prefab, previewMesh);
 		}
@@ -27,8 +27,8 @@ namespace Game.Guns {
 		}
 		public static void Intialize () {
 			guns = new Gun[] {
-				new Gun (Resources.Load <GameObject> ("Prefabs/GunPrefabs/MountedGun"), 25f),
-				new Gun (Resources.Load <GameObject> ("Prefabs/GunPrefabs/IonCannon" ), 150f)
+				new Gun (Resources.Load <GameObject> ("Prefabs/GunPrefabs/MountedGun")),
+				new Gun (Resources.Load <GameObject> ("Prefabs/GunPrefabs/IonCannon" ))
 			};
 		}
 	}

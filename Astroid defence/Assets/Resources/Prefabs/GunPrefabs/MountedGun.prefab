@@ -13,7 +13,7 @@ GameObject:
   - 64: {fileID: 6498814}
   - 114: {fileID: 11436568}
   - 135: {fileID: 13554190}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,8 +31,7 @@ GameObject:
   - 33: {fileID: 3362958}
   - 23: {fileID: 2314200}
   - 64: {fileID: 6465374}
-  - 114: {fileID: 11472992}
-  - 114: {fileID: 11497526}
+  - 114: {fileID: 11492342}
   m_Layer: 14
   m_Name: MountedGun
   m_TagString: Untagged
@@ -83,6 +82,7 @@ GameObject:
   - 4: {fileID: 474664}
   - 33: {fileID: 3390384}
   - 23: {fileID: 2360372}
+  - 65: {fileID: 6594342}
   m_Layer: 14
   m_Name: Cube_002
   m_TagString: Untagged
@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 398.447296, y: -329.549866, z: -184.420914}
+  m_LocalPosition: {x: 149.422821, y: -541.215088, z: -2933.2229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442614}
@@ -164,7 +164,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e14f2b4e48f6044debc8a75c7cce3855, type: 2}
+  - {fileID: 2100000, guid: 3cd1da1d331c04d7d9e444e175c82048, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -236,7 +236,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: de3a350d1bf5745f98d117bcbd4d4609, type: 2}
+  - {fileID: 2100000, guid: 3cd1da1d331c04d7d9e444e175c82048, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -314,6 +314,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300006, guid: 9c141e7ba285144958e6188f44e01de7, type: 3}
+--- !u!65 &6594342
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8644042, y: 13.7288046, z: 6.8644042}
+  m_Center: {x: .0844975635, y: 6.64015722, z: -.0817226097}
 --- !u!114 &11436568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,7 +349,7 @@ MonoBehaviour:
   enemies:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &11472992
+--- !u!114 &11492342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -345,28 +357,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 108502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4687251356da34bcbad95a51e6abdb55, type: 3}
+  m_Script: {fileID: 11500000, guid: 782b6139fe760423c848188c8eca1a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  castVector: {x: 0, y: 0, z: -1}
-  vectorUp: {x: -1, y: 0, z: 0}
-  offset: {x: 0, y: 0, z: 0}
-  ToBottom: 0
---- !u!114 &11497526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2295e6c6218f54634b25665e682e983f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  previewFilter: {fileID: 0}
+  gunCost: 25
+  upgradeCost: 0
+  uiDistanceAbove: 50
+  upgrade: {fileID: 0}
 --- !u!135 &13554190
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -389,6 +386,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gunCost
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uiDistanceAbove
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

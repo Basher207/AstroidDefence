@@ -8,6 +8,7 @@ public class MoveScript : MonoBehaviour {
 	public float torqueForce = 280;
 
 	public float correctionForce = 20f;
+	public float angleForCorrectionScale = 180f;
 
 	public float perpendicularTurboFactor = 1.5f;
 	public float perpendicularForce = 50;
@@ -27,20 +28,15 @@ public class MoveScript : MonoBehaviour {
 			vel *= perpendicularTurboFactor;
 		vel += appliedForce;
 
-		//Vector3 xTorque = Mathf.Clamp (xRotation, -1, 1) * transform.right * torqueForce;
-		//Vector3 yTorque = Mathf.Clamp (yRotation, -1, 1) * Vector3.up 	   * torqueForce;
+		Quaternion xRotationQuat = Quaternion.AngleAxis (xRotation * Time.deltaTime *-torqueForce, Vector3.right);
+		Quaternion yRotationQuat = Quaternion.AngleAxis (yRotation * Time.deltaTime * torqueForce, Vector3.up);
 
+		Quaternion rotation = transform.rotation;
+		rotation *= yRotationQuat;
+		rotation *= xRotationQuat;
 
-		//Vector3 angularVelocity  = yTorque * Time.deltaTime;
-
-		Vector3 euler = Vector3.zero;
-		euler.y += yRotation * Time.deltaTime * torqueForce;
-		euler.x += xRotation * Time.deltaTime *-torqueForce;
-		
-		Quaternion rotation = transform.rotation * Quaternion.Euler (euler);
-
-
-		rotation = Quaternion.RotateTowards (rotation, Quaternion.LookRotation (rotation * Vector3.forward, Vector3.up), correctionForce * Time.deltaTime);
+		Quaternion correctedQuaternion = Quaternion.LookRotation (rotation * Vector3.forward, Vector3.up);
+		rotation = Quaternion.RotateTowards (rotation, correctedQuaternion, correctionForce * Time.deltaTime);
 
 		rigid.MoveRotation (rotation);
 		rigid.velocity = vel;

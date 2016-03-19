@@ -72,7 +72,7 @@ Rigidbody:
   m_GameObject: {fileID: 115810}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 5
   m_AngularDrag: .0500000007
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 150
-  moveForce: 500
+  moveForce: 100
   shipLayer:
     serializedVersion: 2
     m_Bits: 8192
@@ -170,7 +170,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveForce
-      value: 500
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

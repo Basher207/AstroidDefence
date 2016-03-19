@@ -48,7 +48,7 @@ namespace Game.Resource {
 			if (instance.health <= 0) {
 				//ship be dead, game be lost
 				instance.health=0;
-				GameObject.Find("Canvas").GetComponent<UI>().shipDown();// I know it's not perfect, fix it later
+				GameObject.Find("BrianCanvas").GetComponent<UI>().shipDown();// I know it's not perfect, fix it later
 			}
 		}
 

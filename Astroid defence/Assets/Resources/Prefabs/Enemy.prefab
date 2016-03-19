@@ -43,7 +43,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f947a887017744ff0a5505eef1317eb3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -92,8 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   currentHealth: 0
-  maxHealthColor: {r: .0758619234, g: 0, b: 1, a: 0}
-  deadColor: {r: 1, g: 0, b: 0, a: 0}
+  reactor: {fileID: 0}
+  maxHealthColor: {r: .905882359, g: .298039228, b: .235294119, a: 0}
+  deadColor: {r: .905882359, g: .298039228, b: .235294119, a: 0}
 --- !u!114 &11455928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,28 +146,32 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealthColor.r
-      value: .0758619234
+      value: .905882359
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealthColor.g
-      value: 0
+      value: .298039228
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealthColor.b
-      value: 1
+      value: .235294119
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.r
-      value: 1
+      value: .905882359
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.g
-      value: 0
+      value: .298039228
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.b
-      value: 0
+      value: .235294119
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f947a887017744ff0a5505eef1317eb3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115810}
