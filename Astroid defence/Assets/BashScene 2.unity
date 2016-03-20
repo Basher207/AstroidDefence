@@ -430,7 +430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &352377165
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +515,7 @@ RectTransform:
   m_Children:
   - {fileID: 1292514687}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 483.100006, y: -371.5}
@@ -702,7 +702,7 @@ Transform:
   m_LocalScale: {x: 21349.1113, y: 21349.1035, z: 21349.1035}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &443281510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,25 +759,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSpawn: {fileID: 144110, guid: e69e5223686a147e9bfbd33762f6926f, type: 2}
   numberToSpawn: 350
-  velocityDirection: {x: 0, y: -.360000014, z: -.720000029}
   speed: 70
   minAsteroidScale: 5
   maxAsteroidScale: 8
   minRotation: 3
   maxRotation: 20
-  SpawnAtStart: 1
+  spawnDistance: 0
+  spawnExtents: {x: 0, y: 0}
+  checkerIndex: 0
+  astroids: []
 --- !u!4 &497083291
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 497083289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .8945297, y: 0, z: 0, w: .44700855}
   m_LocalPosition: {x: 606, y: 1608.26001, z: 537.780029}
   m_LocalScale: {x: 4138.90674, y: 4002.1189, z: 4886.75537}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &580158759
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &626100404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1222,7 @@ Transform:
   m_LocalScale: {x: 14.6650229, y: 19.1244488, z: 14.66502}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &1182819990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,7 +1402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1216784359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,7 +1748,7 @@ RectTransform:
   - {fileID: 1204712349}
   - {fileID: 1567157808}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1822,6 +1824,52 @@ MonoBehaviour:
   healthGO: {fileID: 1204712348}
   shipDestroyed: 0
   healthBar: {fileID: 1567157809}
+--- !u!1001 &1531805391
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 657.590332
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -268.783234
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -135.206955
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 477464, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108502, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1567157807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,25 +2103,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSpawn: {fileID: 144110, guid: e69e5223686a147e9bfbd33762f6926f, type: 2}
   numberToSpawn: 350
-  velocityDirection: {x: 0, y: -.360000014, z: -.720000029}
   speed: 70
   minAsteroidScale: 5
   maxAsteroidScale: 8
   minRotation: 3
   maxRotation: 20
-  SpawnAtStart: 1
+  spawnDistance: 0
+  spawnExtents: {x: 0, y: 0}
+  checkerIndex: 0
+  astroids: []
 --- !u!4 &1824457615
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824457613}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .8945297, y: 0, z: 0, w: .44700855}
   m_LocalPosition: {x: 606, y: 1493.26001, z: 429.779999}
   m_LocalScale: {x: 4138.90674, y: 4002.1189, z: 4886.75537}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1828642776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,7 +2366,7 @@ Transform:
   m_Children:
   - {fileID: 1155593676}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &2039093410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,66 +2509,34 @@ MonoBehaviour:
   - squads:
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
+      numberPerDrop: 15
+      totalTime: 20
     waitTillNextWave: 20
   - squads:
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
       numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
+      totalTime: 20
     waitTillNextWave: 20
   - squads:
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
       numberPerDrop: 10
-      totalTime: 5
+      totalTime: 20
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
+      numberPerDrop: 15
+      totalTime: 20
     waitTillNextWave: 20
   - squads:
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
+      numberPerDrop: 15
+      totalTime: 20
     - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
       numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
-    - prefab: {fileID: 115810, guid: 4b9c73ad8b62b43d2a49074ee366316c, type: 2}
-      numberOfDrops: 5
-      numberPerDrop: 10
-      totalTime: 5
+      numberPerDrop: 15
+      totalTime: 20
     waitTillNextWave: 20
 --- !u!23 &2146707047
 MeshRenderer:
@@ -2564,4 +2582,4 @@ Transform:
   m_LocalScale: {x: 49.7477417, y: 49.7477264, z: 49.7477341}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3

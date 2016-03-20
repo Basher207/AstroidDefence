@@ -33,7 +33,7 @@ GameObject:
   - 64: {fileID: 6465374}
   - 114: {fileID: 11492342}
   m_Layer: 14
-  m_Name: MountedGun
+  m_Name: MountedGunLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.422821, y: -541.215088, z: -2933.2229}
+  m_LocalPosition: {x: 657.590332, y: -268.783234, z: -135.206955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442614}
@@ -341,7 +341,7 @@ MonoBehaviour:
   fireSpeed: 250
   offset: 1.5
   energyPerShot: 4
-  coolDown: .5
+  coolDown: .200000003
   timeToAllowShooting: 0
   ship:
     serializedVersion: 2
@@ -360,10 +360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782b6139fe760423c848188c8eca1a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunCost: 25
+  gunCost: 50
   upgradeCost: 0
   uiDistanceAbove: 50
-  upgrade: {fileID: 108502, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
+  upgrade: {fileID: 0}
 --- !u!135 &13554190
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -389,16 +389,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: gunCost
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: uiDistanceAbove
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: upgrade
-      value: 
-      objectReference: {fileID: 108502, guid: 9b8c5c2c82fb247388850b9c1ce1de0c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108502}

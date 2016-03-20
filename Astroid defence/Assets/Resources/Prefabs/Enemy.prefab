@@ -94,7 +94,7 @@ MonoBehaviour:
   currentHealth: 0
   reactor: {fileID: 0}
   maxHealthColor: {r: .905882359, g: .298039228, b: .235294119, a: 0}
-  deadColor: {r: .905882359, g: .298039228, b: .235294119, a: 0}
+  deadColor: {r: .945098042, g: .768627465, b: .0588235296, a: 1}
 --- !u!114 &11455928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,20 +158,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.r
-      value: .905882359
+      value: .945098042
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.g
-      value: .298039228
+      value: .768627465
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deadColor.b
-      value: .235294119
+      value: .0588235296
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f947a887017744ff0a5505eef1317eb3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: deadColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115810}
