@@ -21,7 +21,7 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: 32512863bc7234eac8bf6e4e87fef014, type: 3}
           m_Scale: {x: 6, y: 6}
-          m_Offset: {x: 123.586861, y: 24.7032413}
+          m_Offset: {x: 139.27538, y: 27.852446}
       data:
         first:
           name: _BumpMap
@@ -90,11 +90,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -102,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .963999987
+        second: 0.964
       data:
         first:
           name: _BumpScale
@@ -126,7 +126,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .941999972
+        second: 0.942
     m_Colors:
       data:
         first:

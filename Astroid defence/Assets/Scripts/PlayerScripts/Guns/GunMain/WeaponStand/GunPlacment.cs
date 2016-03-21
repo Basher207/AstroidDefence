@@ -6,6 +6,8 @@ using Game.Guns;
 public class GunPlacment : MonoBehaviour {
 
 	public static GunPlacment instance;
+	public AudioClip buildSound, unbuildSound;
+	public AudioSource source;
 
 	public static Gun weaponToPlace {
 		get {
@@ -35,6 +37,7 @@ public class GunPlacment : MonoBehaviour {
 	}
 	void Awake () {
 		instance = this;
+		source = GetComponent<AudioSource> ();
 		if (visualizer == null) {
 			Material mat = Resources.Load <Material> ("Materials/Guns/Visualization");
 			visualizer 	 = new GameObject ("visualizer").AddComponent<MeshFilter> ();
@@ -86,6 +89,7 @@ public class GunPlacment : MonoBehaviour {
 				Vector3 normal = hit.normal;
 				Quaternion lookDirection = Quaternion.LookRotation (TorusNavigator.tangentAtPoint (placmentPos), normal);
 
+				AudioManager.instance.playBuildSound (placmentPos + normal);
 				turrets [gridVector.x, gridVector.y] = new GunInstance (ToPlace, Instantiate (ToPlace.prefab, placmentPos + normal, lookDirection) as GameObject);
 				turrets [gridVector.x, gridVector.y].instance.GetComponent<BuyableGun> ().gridVec = gridVector;
 			}

@@ -5,6 +5,7 @@ using Game.Resource;
 namespace Game.Guns {
 	public class BuyableGun : MonoBehaviour {
 	
+
 		public float gunCost;
 		public float upgradeCost;
 
@@ -26,6 +27,7 @@ namespace Game.Guns {
 			if (upgrade == null)
 				return false;
 			if (GameResources.UseIron (upgradeCost)) {
+				AudioManager.instance.playUpgradeSound (transform.position);
 				Instantiate (upgrade, transform.position, transform.rotation);
 				Destroy (gameObject);
 				return true;
@@ -38,6 +40,7 @@ namespace Game.Guns {
 			TorusNavigator.direction[gridVec.x,gridVec.y] = TorusNavigator.Direction.UnChecked;
 			TorusNavigator.RecalculateDirections ();
 	
+			AudioManager.instance.playSellSound (gameObject.transform.position);
 			Destroy (gameObject);
 		}
 	}
