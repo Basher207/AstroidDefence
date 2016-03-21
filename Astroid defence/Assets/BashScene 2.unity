@@ -1876,6 +1876,7 @@ MonoBehaviour:
   upgradeSound: {fileID: 8300000, guid: 4ecb120e86d86ca47954898e6a45dd98, type: 3}
   shotSound: {fileID: 8300000, guid: 3bd2c33ca9e3b9c4c8afa3c20750d962, type: 3}
   hvyShotSound: {fileID: 8300000, guid: 9487b96e342d5b84fa41357abb0add73, type: 3}
+  backgroundMusic: {fileID: 0}
 --- !u!4 &1485514479
 Transform:
   m_ObjectHideFlags: 0
@@ -2488,9 +2489,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 361fd9923e18bf1478d574b4bac0fe05, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0

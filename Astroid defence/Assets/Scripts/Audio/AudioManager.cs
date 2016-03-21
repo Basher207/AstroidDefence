@@ -4,12 +4,13 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 
 
-	public AudioClip buildSound, sellSound, upgradeSound, shotSound, hvyShotSound;
+	public AudioClip buildSound, sellSound, upgradeSound, shotSound, hvyShotSound, backgroundMusic;
 	public static AudioManager instance;
 
 	void Awake()
 	{
 		instance = this;
+
 	}
 
 	//methods to call sound, creates sound on specified position
@@ -34,6 +35,10 @@ public class AudioManager : MonoBehaviour {
 	public void playUpgradeSound(Vector3 position)
 	{
 		AudioSource.PlayClipAtPoint (upgradeSound, position);
+	}
+	public void playBackgroundMusic(Vector3 position)
+	{
+		AudioSource.PlayClipAtPoint(backgroundMusic,position);
 	}
 
 
